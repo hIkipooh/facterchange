@@ -1,0 +1,145 @@
+//== sort
+.items-sort {
+  padding-bottom: 18px;
+
+  h3 {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #020202;
+
+    i, span, small {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    i {
+      margin-right: 11px;
+    }
+
+    small {
+      padding-left: 7px;
+      font-size: 14px;
+      font-weight: normal;
+      color: #b8b3b3;
+      vertical-align: middle;
+
+      span {
+        color: #6a6a6a;
+      }
+    }
+
+  }
+
+  &__tabs {
+    float: right;
+
+    .sort-bookmark-check {
+      display: none;
+    }
+  }
+
+  .category-box {
+    padding-bottom: 60px;
+    text-align: center;
+
+    h3 {
+      padding-bottom: 66px;
+      font-size: 17px;
+    }
+
+    li { width: 100% !important}
+
+    .js-selectCategoy {
+      width: 100%;
+      height: 60px;
+      border: 1px solid #fff;
+      border-radius: 30px;
+      transition: all $transition-speed ease;
+
+      &:hover,
+      &.on {
+        color: #6d64cd;
+        border-color: #a092ff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $grid-breakpoint-tablet) {
+  .items-sort {
+    padding-bottom: 4px;
+    h3.items-sort__category {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+
+      .items-sort__title {
+        max-width: 60%;
+      }
+
+      .btn {
+        font-size: 14px;
+      }
+
+      small {
+        padding-left: 0;
+      }
+
+      i {
+        margin-right: 0;
+      }
+    }
+    &__tabs {
+      display: none !important;
+    }
+
+    &.wallet-sort {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      width: 100%;
+      h3.items-sort__category {
+        display: block;
+        width: 50%;
+
+        .items-sort__title {
+          display: block;
+        }
+
+        small {
+          display: block
+        }
+      }
+
+      .items-sort__tabs {
+        display: block !important;
+        width: 50%;
+        text-align: right;
+      }
+    }
+
+    .category-box {
+
+    }
+  }
+}
+
+@media (max-width: $grid-breakpoint-tablet) and (max-height: $grid-breakpoint) {
+  .items-sort {
+    .category-box {
+      padding: 0;
+      h3 {
+        position: relative;
+        top: -20px;
+        padding-bottom: 0;
+        font-size: 17px;
+      }
+
+      .js-selectCategoy {
+        height: 40px;
+      }
+    }
+  }
+}

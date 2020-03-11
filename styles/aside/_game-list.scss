@@ -1,0 +1,52 @@
+.game-list {
+
+  li {
+    display: block;
+    padding-bottom: 30px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+
+    $photo-size: 60px;
+    $down-size: 50px;
+    &__photo {
+      width: $photo-size;
+      height: $photo-size;
+      img { width: 100%; height: 100% }
+    }
+
+    &__info {
+      width: calc(100% - #{$photo-size} - #{$down-size});
+      padding-left: 16px;
+      text-align: left;
+
+      h4 {
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+      }
+      p {
+        font-size: 13px;
+        font-weight: 500;
+        color: #797979;
+      }
+    }
+
+    &__down {
+      width: $down-size;
+      padding: 4px 0;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: #797979;
+      background-color: #2f313b;
+    }
+  }
+}

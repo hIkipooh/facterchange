@@ -1,0 +1,635 @@
+.aside-header {
+
+  .pending {
+    height: 240px;
+    text-align: center;
+    line-height: 240px;
+    color: #fff;
+
+  }
+
+  &__sign {
+    height: 256px;
+    padding-top: 38px;
+
+    &-photo {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      margin-bottom: 9px;
+      border-radius: 50%;
+      background: #fff;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-email {
+      padding-bottom: 24px;
+      font-size: 13px;
+      font-weight: 300;
+      color: #fff;
+
+      i { font-size: 18px }
+
+      a {
+        color: #fff;
+
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+
+    &-eos {
+      padding-bottom: 4px;
+      font-size: 23px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    &-cost {
+      padding-bottom: 5px;
+      font-size: 12px;
+      font-weight: 300;
+      color: #aea6e6;
+      i, span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      i {
+        margin-right: 5px;
+        font-size: 18px;
+      }
+    }
+
+    .js-charge {
+      height: 30px;
+      padding: 0 16px;
+      border-radius: 17px;
+      border: solid 1px #6d64cd;
+      font-size: 12px;
+      font-weight: 500;
+      color: #a092ff;
+      background-color: #473F9F;
+      transition: all .2s ease;
+
+      &:hover {
+        color: #fff;
+        background-color: #6d64cd;
+      }
+    }
+  }
+
+  .signUp {
+    position: absolute;
+    top: 86px;
+    left: calc(50% - 92px);
+    color: #9fa8c9;
+    text-align: center;
+
+    .js-signIn {
+      position: relative;
+      width: 184px;
+      height: 60px;
+      border: 1px solid transparent;
+      border-radius: 28px;
+      color: #ffffff;
+      background-image: linear-gradient(to bottom, #4137ac, #4137ac), linear-gradient(to bottom, #6053ea, #20196d);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+
+      &:hover {
+        border-width: 0;
+        background-image: linear-gradient(to bottom, #6d64cd, #6d64cd), linear-gradient(to bottom, #6d64cd, #6d64cd);
+      }
+      overflow: hidden;
+
+      small { color: #9fa8c9 }
+
+      &::after {
+        position: absolute;
+        top: -1px; bottom: -1px;
+        left: -1px; right: -1px;
+        border-image-source: linear-gradient(to bottom, #6053ea, #20196d);
+        border-image-slice: 1;
+        content: '';
+        z-index: -1;
+        border-radius: 29px;
+      }
+
+    }
+
+    p {
+      padding-top: 10px;
+      font-size: 13px;
+      color: #6d64cd;
+    }
+  }
+}
+
+.signUp-box {
+  color: $base-font-color;
+  text-align: left;
+
+  .hellow-msg {
+    padding-bottom: 54px;
+    text-align: center;
+  }
+
+  a {
+    color: #7573e0;
+    &:hover {
+      color: #473fa0;
+    }
+  }
+
+  .modal-body {
+    padding: 24px 30px;
+  }
+
+  h3 {
+    padding-bottom: 18px;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  h4 {
+    padding-bottom: 8px;
+  }
+
+  .q-signup {
+    text-align: center;
+  }
+
+  .select-social {
+    max-width: 376px;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      padding-bottom: 33px;
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    .btn {
+      width: 88px;
+      height: 88px;
+      margin: 0 8px 14px;
+      border-radius: 50%;
+      border: solid 1px #cecece;
+      background-color: #ffffff;
+      transition: all $transition-speed ease;
+
+      img {
+        width: 25px;
+        margin-bottom: 5px;
+      }
+
+      span:first-child {
+        width: 42%;
+        text-align: right;
+      }
+
+      span:last-child {
+        width: 58%;
+        text-align: left;
+      }
+
+      &.js-selectFacebook:hover {
+        color: #fff;
+        border-color: #364f8f;
+        background: #364f8f;
+      }
+
+      &.js-selectKakao:hover {
+        border-color: #f7e164;
+        background: #f7e164;
+      }
+    }
+
+    .terms {
+      padding-top: 36px;
+      font-size: 13px;
+      color: #b8b3b3;
+
+      &.margin-top-small {
+        margin-top: 25px;
+      }
+
+      a {
+        margin-left: 10px;
+        font-size: 13px;
+        color: #020202;
+      }
+    }
+  }
+
+  .signup-info {
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 19px;
+    border: dashed 1px #979797;
+
+    h4 {
+      padding-bottom: 30px;
+      text-align: center;
+
+      img, span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      img {
+        width: 24px;
+        margin-right: 10px;
+      }
+    }
+
+    .codebox {
+      h3 {
+        margin: 0;
+        padding-bottom: 6px;
+      }
+
+      &.noPd .timer {
+        padding-bottom: 0;
+      }
+    }
+
+    li {
+      padding-bottom: 20px;
+      font-size: 13px;
+      font-weight: 300;
+      color: #25262d;
+    }
+  }
+
+  .form-group {
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  .message {
+    padding-bottom: 90px;
+    text-align: center;
+
+    .photo {
+      padding-bottom: 20px;
+      img { width: 196px }
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 170%;
+
+      b { color: #6d64cd }
+    }
+  }
+
+  .js-signClose,
+  .js-submit {
+    width: 100%;
+    height: 64px;
+    border-radius: 3px;
+    box-shadow: 2px 1px 11px 0 rgba(42, 62, 210, 0.28);
+  }
+
+  .js-signClose {
+    color: #fff;
+    background: #6d64cd;
+  }
+
+  .opener-game {
+    text-align: center;
+    .photo {
+      padding-bottom: 12px;
+      img { width: 50px}
+    }
+    h4 {
+      padding-bottom: 5px;
+      font-size: 14px;
+    }
+
+    p {
+      padding-bottom: 40px;
+      font-size: 13px;
+      font-weight: 300;
+    }
+  }
+
+  &-list {
+    padding-bottom: 40px;
+    max-width: 360px;
+    margin: 0 auto;
+    li {
+      padding-bottom: 10px;
+      font-size: 13px;
+      font-weight: 300;
+    }
+  }
+
+  .signUp-account {
+    max-width: 360px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+
+    &__user {
+      font-size: 13px;
+      img {
+        margin-left: 10px;
+        width: 20px;
+      }
+
+      p { font-weight: 300; }
+    }
+
+    &__games {
+      img {
+        width: 46px;
+        height: 46px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .game-account-info {
+    padding-bottom: 50px;
+    .photo,
+    .info {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .photo {
+      padding-right: 7px;
+      img { width: 40px; }
+    }
+
+    .info {
+      h4 {
+        padding-bottom: 0;
+        font-size: 13px;
+      }
+      p {
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.signIn-box {
+  padding-bottom: 40px;
+
+  input {
+    display: block;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    border: solid 1px #e8e8e8;
+    padding: 0 26px;
+    margin-bottom: 11px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #797979;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  a {
+    margin-left: 24px;
+  }
+
+  .js-submit {
+    width: 146px;
+    height: 50px;
+    border-radius: 32px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #6d64cd;
+    box-shadow: none;
+
+    &:active {
+      background: #473fa0;
+    }
+  }
+}
+
+.activity-time {
+  display: flex;
+  margin-bottom: 10px;
+  border: dashed 1px #979797;
+  border-radius: 19px;
+  padding: 24px;
+
+  .timer {
+    padding-bottom: 0;
+  }
+
+  .msg {
+    font-weight: 300;
+    width: calc(100% - 70px);
+  }
+}
+
+.timer {
+  padding-bottom: 30px;
+  text-align: center;
+  i { font-size: 14px }
+  span {
+    display: inline-block;
+    padding-left: 6px;
+    font-size: 17px;
+    font-weight: 300;
+    color: #df2020;
+    vertical-align: middle;
+  }
+}
+
+.timer-input {
+  position: relative;
+
+  .timer {
+    position: absolute;
+    top: 43px;
+    right: 125px;
+  }
+
+  &.title-line{
+    .timer {
+      top: 41px;
+      right: 15px;
+    }
+  }
+}
+
+//== webapp
+.page-wrap.webapp {
+  .aside-header {
+    .signUp {
+      left: 0;
+      width: 100%;
+
+      .js-signIn {
+        width: 150px;
+      }
+    }
+
+    &__sign {
+      height: auto;
+      padding-top: 38px;
+
+      &-photo {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 10px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &-email {
+        display: none;
+      }
+
+      &-eos {
+        padding-bottom: 4px;
+        font-size: 14px;
+      }
+
+      &-cost {
+        padding-bottom: 11px;
+        font-size: 10px;
+
+        i {
+          margin-right: 5px;
+          font-size: 12px;
+        }
+      }
+
+      .js-charge {
+        width: 84px;
+        padding: 0;
+        font-size: 12px;
+        transition: all .2s ease;
+        background: #4137ac;
+
+        &:hover {
+          color: #fff;
+          background-color: #6d64cd;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $grid-breakpoint) {
+  .signUp-box {
+    .select-social {
+      .btn {
+        max-height: 23vw;
+        max-width: 23vw;
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+      }
+    }
+  }
+}
+
+@media (max-width: $grid-breakpoint-tablet) and (max-height: $grid-breakpoint) {
+  .signUp-box .hellow-msg {
+    padding-bottom: 26px;
+  }
+
+  .activity-time {
+    padding: 19px 24px 22px;
+    margin-bottom: 27px;
+  }
+
+  .signIn-box,
+  .social-box {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .signIn-box {
+    float: left;
+    width: 50%;
+
+    input {
+      height: 50px;
+    }
+
+    .js-submit {
+      height: 43px;
+
+      span {
+        position: relative;
+        top: -.3ex;
+      }
+    }
+  }
+  .social-box {
+    float: right;
+    width: 40%;
+    .select-social {
+      display: flex;
+      justify-content: space-between;
+      .btn {
+        width: 54px;
+        height: 54px;
+        margin: 0;
+
+        .icon {
+          position: relative;
+          top: .3ex;
+        }
+
+        .title {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .terms {
+    clear: both;
+  }
+
+}
+
+@media (max-width: $grid-breakpoint) and (max-height: $grid-breakpoint) {
+  .signIn-box {
+    float: none;
+    width: 100%;
+  }
+  .social-box {
+    float: none;
+    width: 100%;
+    .select-social {
+      display: flex;
+      justify-content: space-between;
+      .btn {
+        width: 88px;
+        height: 88px;
+        margin: 4px;
+
+        .icon {
+          top: .3ex;
+        }
+
+        .title {
+          display: block;
+        }
+      }
+    }
+  }
+}

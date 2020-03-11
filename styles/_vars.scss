@@ -1,0 +1,50 @@
+//== screen breakpoint
+$grid-breakpoint: 480px;
+$grid-breakpoint-tablet: 768px;
+$grid-breakpoint-laptop: 1024px;
+$grid-breakpoint-laptop-L: 1326px;
+$grid-breakpoint-laptop-m: 1226px;
+
+//== space
+$aside-nav-height: 80px;
+$header-height: 100px;
+$header-height-mb: 60px;
+$gap-space: 24px;
+$gap-space-mb: 12px;
+
+//== z-index
+$aside-index: 4;
+
+//== mixin Variables
+$prefix:'-moz-', '-webkit-', '-o-', '-ms-', '';
+
+//== layout
+$aside-width: 400px;
+$aside-width-laptop: 300px;
+$webapp-aside-width: 180px;
+
+//== Typography
+//=== size
+$font-size-base:          14px !default;
+$font-size-base-mb:       13px !default;
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h3-small: 20px;
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h4-small: 16px;
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$bookmark-size: 18px;
+$min-item-width: 52px;
+
+//=== color
+$base-font-color: #020202;
+$body-color: #f5f7fc;
+$yellow: #ffba00;
+$gray: #25262d;
+
+//== transition
+$transition-speed: .3s;
+

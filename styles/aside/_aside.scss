@@ -1,0 +1,336 @@
+.aside {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  background-color: #25262d;
+  overflow: hidden;
+  overflow-y: auto;
+
+  $aside-header-height: 228px;
+  $aside-signIn-header-height: 336px;
+  $aside-footer-height: 100px;
+
+  &-header {
+    position: relative;
+    width: 100%;
+    height: $aside-header-height;
+    text-align: center;
+    background: url(/static/aside-sign-bg.jpg) no-repeat top center;
+    background-size: 100% 100%;
+
+    .js-asideClose {
+      display: none;
+      position: absolute;
+      top: 14px; right: 14px;
+    }
+
+    //== language
+    $langh1-width: 105px;
+    $langh1-height: 38px;
+    .lang-check {
+      box-sizing: border-box;
+      position: absolute;
+      display: inline-block;
+      left: 4px;
+      top: 10px;
+      vertical-align: top;
+      z-index: 1;
+
+      .js-choiceLang {
+        width: $langh1-width;
+        height: $langh1-height;
+        padding-left: 14px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0);
+        color: #908bd1;
+        font-size : 12px;
+        text-align: left;
+
+        .lang-now {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 14px;
+        }
+        i {
+          font-size: 20px;
+          margin-right: 6px;
+        }
+      }
+
+      &__lang {
+        box-sizing: border-box;
+        display: none;
+        position: absolute;
+        top: $langh1-height; left: 0;
+        width: $langh1-width;
+        padding: 0 13px;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, .1);
+        text-align: center;
+
+        .btn {
+          display: block;
+          width: 100%;
+          padding: 10px 0;
+          color: #908bd1;
+          text-align: center;
+          font-size: 12px;
+
+          &.active {
+            color:  #fff;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &.js-lang-en {
+            border-bottom: 1px solid rgba(243,243,243,.1);
+          }
+
+          &:last-child {
+            border-bottom: 0;
+          }
+        }
+      }
+
+      &.on {
+        .lang-check__lang {
+          display: block;
+        }
+      }
+    }
+
+      //== navigation
+    &__nav {
+      height: $aside-nav-height;
+      line-height: $aside-nav-height;
+      background-color: #4137ac;
+
+      a {
+        display: inline-block;
+        width: 33%;
+        font-size: 12px;
+        font-weight: 300;
+        color: #ffffff;
+        vertical-align: middle;
+
+        &.home-link {
+          display: none;
+        }
+
+        &:hover {
+          color: #a092ff;
+        }
+      }
+    }
+
+    &__home {
+      display: none;
+      position: absolute;
+      right: 12px;
+      bottom: 10px;
+      color: #fff;
+    }
+  }
+
+  &-body {
+    position: relative;
+    box-sizing: border-box;
+    min-height: calc(100% - #{$aside-header-height} - #{$aside-footer-height});
+    padding: 45px 32px 100px 38px;
+
+    .title {
+      padding-bottom: 27px;
+      text-align: left;
+
+      a {
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      &-tit {
+        color: #ffffff;
+        padding-right: 10px;
+      }
+
+      &-num { color: #a092ff }
+    }
+  }
+
+  &-footer {
+    position: relative;
+    box-sizing: border-box;
+    height: $aside-footer-height;
+    padding: 0 32px 0 38px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #575966;
+
+    .social {
+      border-bottom: 1px dashed #2d3140;
+
+      a {
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        margin-right: 35px;
+        margin-bottom: 25px;
+
+        img {
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .company {
+      padding: 19px 0;
+
+      a {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 500;
+        color: #575966;
+        vertical-align: middle;
+
+        &:hover {
+          color: #8c8ba0;
+        }
+      }
+
+      .vt-line {
+        height: 13px;
+        margin: 0 20px;
+        background-color: #33353f;
+      }
+    }
+
+    .copyright {
+
+    }
+  }
+
+  &.signIn {
+    .aside-header {
+      height: $aside-signIn-header-height;
+      background-size: 100% calc(100% - 80px);
+
+      &__home {
+        bottom: $aside-nav-height;
+      }
+    }
+    .aside-body {
+      min-height: calc(100% - #{$aside-signIn-header-height} - #{$aside-footer-height});
+    }
+  }
+}
+
+
+.page-wrap.webapp {
+  .aside {
+    background: #4137ac;
+
+    .aside-header {
+      background: transparent;
+
+      .js-asideClose {
+        display: none;
+      }
+
+      //== language
+      $langh1-width: 80px;
+      $langh1-height: 30px;
+      .lang-check {
+        left: 4px;
+        top: 4px;
+
+        .js-choiceLang {
+          width: $langh1-width;
+          height: $langh1-height;
+          font-size : 11px;
+
+          .lang-now {
+            font-size: 12px;
+          }
+          i {
+            font-size: 16px;
+            margin-right: 4px;
+          }
+        }
+
+        &__lang {
+          top: $langh1-height;
+          width: $langh1-width;
+          padding: 10px 0;
+          background: rgba(0, 0, 0, .6);
+
+          .btn {
+            padding: 5px 0;
+          }
+        }
+      }
+
+      &__nav {
+        line-height: 250%;
+        padding-top: 18px;
+
+        a {
+          display: block;
+          width: 90%;
+          margin: 0 auto;
+          text-align: center;
+
+          &.home-link {
+            display: block;
+          }
+        }
+        .vt-line {
+          display: none;
+        }
+      }
+    }
+
+    .aside-body,
+    .aside-footer {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $grid-breakpoint-laptop-L) {
+  .aside {
+    &-footer {
+      .social {
+        a {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $grid-breakpoint-tablet) {
+  .aside {
+    &-header {
+      &__home {
+        display: inline-block;
+      }
+    }
+    &-footer {
+      .social {
+        a {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $grid-breakpoint) {
+  .aside-header .js-asideClose {
+    display: inline-block;
+  }
+}
+

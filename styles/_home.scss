@@ -1,0 +1,294 @@
+//== home
+.home {
+  padding-top: 42px;
+  padding-bottom: 42px;
+
+  $header-left-size: 430px;
+//=== page header
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 30px;
+
+    h2 {
+      display: inline-block;
+      font-size: 27px;
+      font-weight: 300;
+      color: #020202;
+      vertical-align: middle;
+    }
+
+    &__search {
+      float: right;
+      width: calc(100% - #{$header-left-size});
+      max-width: 373px;
+      padding: 5px 0 5px 10px;
+      border-radius: 50px;
+      background: #fff;
+
+      input {
+        width: calc(100% - 50px);
+        margin: 0;
+        color: #000;
+        vertical-align: middle;;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+//=== exchange
+  .exchange {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+
+    ul { display: flex }
+    li {
+      position: relative;
+      padding: 0 25px;
+
+      &:after {
+        position: absolute;
+        top: 10px; right: 0;
+        display: block;
+        content: '';
+        width: 1px;
+        height: 20px;
+        background-color: #e1e1e1;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 100;
+      color: #797979;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      color: #6a6a6a;
+    }
+  }
+
+
+//=== now game
+  .now-game {
+    display: flex;
+    align-items: center;
+    max-width: $header-left-size;
+    padding-right: 14px;
+
+    &__photo {
+      padding-right: 26px;
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    &__subject {
+      padding-right: 14px;
+      h3 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      p {
+        font-size: 12px;
+        font-weight: normal;
+      }
+    }
+
+    &__discord {
+      display: inline-block;
+      width:30px;
+      height: 30px;
+      padding: 5px;
+      line-height: 1;
+      border:1px solid #999;
+      border-radius: 4px;
+      background: #5f6ceb;
+      transition: background-color .2s ease;
+
+      img {
+        filter: brightness(100);
+        vertical-align: middle;
+        transition: filter .2s ease;
+      }
+
+      &:hover {
+        background: #f1f1f1;
+        img {
+          filter: brightness(1);
+        }
+      }
+    }
+  }
+//=== hot item
+  .hot-item {
+    padding-bottom: 32px;
+    margin: -8px;
+    margin-bottom: 40px;
+    border-bottom: solid 1px #eeeff2;
+
+    &.pending {
+      .card-hot {
+        background: #ebeef7;
+        border: 1px solid #ebeef7;
+
+        .dummy-image {
+          width: 80px;
+          height: 80px;
+          background: #dfe3ec;
+        }
+
+        .card-hot__info-cell__game {
+          span {
+            margin-bottom: 5px;
+          }
+        }
+
+        span {
+          width: 95%;
+          height: 10px;
+          border-radius: 10px;
+          background: #dfe3ec;
+          color: #dfe3ec;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+//=== withdraw
+  .item-withdraw {
+    li {
+      display: block;
+      padding-bottom: 8px;
+    }
+
+    .sort-type {
+      border-width: 0;
+      padding-right: 70px;
+    }
+  }
+
+//=== items
+  .items {
+    position: relative;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin:  -8px;
+    }
+    li {
+      width: 25%;
+      padding: 8px;
+    }
+
+    .empty-list {
+      width: 100%;
+      padding: 60px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  .transaction-items {
+    li {
+      display: block;
+      padding: 8px 0;
+    }
+  }
+
+  .more-items {
+    padding-top: 44px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .pending {
+    .card-line-box {
+      background: #ebeef7;
+      border: 1px solid #ebeef7;
+      text-align: center;
+
+      .state{
+        span {
+          display: inline-block;
+        }
+      }
+
+      span {
+        display: block;
+        width: 100px;
+        height: 20px;
+        border-radius: 10px;
+        background: #dfe3ec;
+        margin: 3px;
+      }
+
+      .dummy-image {
+        width: 60px;
+        height: 60px;
+        background: #dfe3ec;
+      }
+    }
+  }
+
+  .empty-list {
+    width: 100% !important;
+    padding: 60px 0;
+    text-align: center;
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (max-width: $grid-breakpoint-laptop) {
+  .home {
+    .items {
+      li {
+        width: 33.3333%;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: $grid-breakpoint-tablet) {
+  .home {
+    padding-top: 16px;
+
+    .page-header,
+    .hot-item {
+      display: none;
+    }
+    .items {
+      ul {
+        margin: -3.5px;
+      }
+      li {
+        width: 50%;
+        padding: 3.5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .home {
+    .items {
+      li {
+        width: 100%;
+      }
+    }
+  }
+}

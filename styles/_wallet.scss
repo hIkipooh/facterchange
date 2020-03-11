@@ -1,0 +1,277 @@
+//== wallet
+
+.wallet {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-bottom: 60px;
+
+  .flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 205px;
+  }
+
+  .js-help {
+    position: absolute;
+    top: 16px; right: 16px;
+    color: #d8d8d8;
+  }
+
+  &-myinfo {
+    position: relative;
+    flex: 1;
+    margin-left: 8px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px 0 rgba(78, 22, 122, 0.07);
+    background-color: #ffffff;
+
+    .qrcord {
+      padding-right: 16px;
+      img {
+        width: 100px;
+      }
+    }
+
+    dl {
+      display: block;
+      padding-top: 10px;
+
+      dt, dd {
+        display: inline-block;
+      }
+
+      dt {
+        padding-right: 10px;
+        font-size: 13px;
+        font-weight: bold;
+      }
+
+      dd {
+        font-size: 12px;
+        color: #c2c8d6;
+      }
+
+      .btn {
+        margin-left:12px;
+        i { font-size: 13px }
+      }
+    }
+  }
+
+  &-withdraw {
+    position: relative;
+    flex: 1;
+    height: 207px;
+    margin-right: 8px;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.14);
+    border: solid 1px #979797;
+    text-align: center;
+    color: #fff;
+    background-color: #473fa0;
+
+    h4 {
+      padding-bottom: 20px;
+      text-align: left;
+      font-weight: normal;
+    }
+
+    .pocket {
+      padding-bottom: 15px;
+      b, span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &-eos {
+        font-size: 27px;
+        b {
+          padding-right: 7px;
+        }
+      }
+      &-usd {
+        font-size: 12px;
+        color: #988bf6;
+        span {
+          padding-left: 5px;
+        }
+      }
+    }
+
+    .withdraw {
+      .js-popupWithdraw {
+        width: 169px;
+        height: 50px;
+        font-size: 14px;
+        background: #473fa0;
+        transition: background-color $transition-speed ease;
+
+        i {
+          font-size: 15px;
+          padding-right: 4px;
+        }
+
+        &:hover {
+          background:  #6d64cd;
+        }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $grid-breakpoint-tablet) {
+    .wallet {
+      &-myinfo {
+        height: auto;
+        .flex-box {
+          justify-content: space-between;
+          padding: 32px 20px;
+          height: auto;
+        }
+
+        h5 {
+          display: none;
+        }
+
+        .qrcord {
+          padding: 0;
+          padding-right: 10px;
+          img {
+            width: 70px;
+          }
+        }
+
+        .subject {
+          width: 100%;
+          padding-top: 10px;
+        }
+
+        dl {
+          dt {
+            display: block;
+            font-size: 12px;
+          }
+          dd {
+            font-size: 12px;
+          }
+        }
+
+      }
+
+      &-withdraw {
+        height: auto;
+
+        h4 { padding-bottom: 10px }
+        .pocket-eos {
+          font-size: 22px;
+        }
+
+        .pocket-usd {
+          font-size: 12px;
+        }
+
+        .withdraw {
+
+          .js-popupWithdraw {
+            font-size: 13px;
+
+            &:hover {
+              background: transparent;
+            }
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: $grid-breakpoint) {
+  .wallet {
+    display: block;
+    padding-bottom: 20px;
+
+    .flex-box {
+      height: auto;
+    }
+
+    &-myinfo {
+      height: auto;
+      padding: 10px 20px 20px;
+      margin: 0 auto;
+      margin-bottom: 14px;
+
+      .flex-box {
+        padding: 0;
+        height: auto;
+      }
+
+      h5 {
+        display: none;
+      }
+
+      .qrcord {
+        padding: 0 10px 0 0;
+        img {
+          width: 80px;
+        }
+      }
+
+
+      dl {
+        dt {
+          display: block;
+          font-size: 12px;
+        }
+        dd {
+          font-size: 12px;
+        }
+      }
+
+    }
+
+    &-withdraw {
+      margin: 0 auto;
+      padding: 15px 20px;
+
+      h4 {
+        display: none;
+      }
+
+      .wallet-withdraw__box {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .pocket {
+        width: 50%;
+        text-align: right;
+        &-eos {
+          b {
+            padding-right: 7px;
+            font-size: 22px;
+          }
+          span {
+            font-size: 11px;
+          }
+        }
+      }
+
+
+      .pocket-usd {
+        font-size: 11px;
+        color: #988bf6;
+      }
+
+      .withdraw {
+        width: 50%;
+        text-align: center;
+        .js-popupWithdraw {
+          width: 100%;
+          font-size: 13px;
+        }
+      }
+
+    }
+  }
+}

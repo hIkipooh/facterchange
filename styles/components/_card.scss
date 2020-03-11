@@ -1,0 +1,738 @@
+.card {
+  position: relative;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  border: solid 1px #dadada;
+  background-color: #fafbfe;
+  overflow: hidden;
+  box-shadow: 0 0 0 rgba(0,0,0,.0);
+
+  transition: all $transition-speed ease;
+
+  //&:hover {
+  //  top: -3px;
+  //  box-shadow: 2px 4px 4px rgba(0,0,0,.1);
+  //}
+
+  .js-bookmark {
+    float: right;
+    font-size: $bookmark-size;
+    color: #d7d7d7;
+    transition: color $transition-speed ease;
+
+    &.on,
+    &:hover {
+      color: #473fa0;
+    }
+  }
+
+  &-item {
+    height: calc(100% - 24px);
+    cursor: pointer;
+
+    &-header {
+      height: 36px;
+      padding: 10px 16px 0;
+      text-align: right;
+      &:after {
+        display: block;
+        content: '';
+        clear: both;
+      }
+    }
+
+    &__box {
+      height: calc(100% - 64px);
+      padding: 0 16px 16px;
+    }
+
+    &__photo {
+      text-align: center;
+      .photo {
+        position: relative;
+        display: inline-block;
+        width: 98px;
+        height: 98px;
+        overflow: hidden;
+      }
+      img {
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        min-width: $min-item-width;
+        max-width: 100%;
+      }
+    }
+
+    &__option {
+      display: none;
+
+      &-full {
+        display: none;
+      }
+    }
+
+    &__type {
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    &__name {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    &__user {
+      .name {
+        display: inline-block;
+        width: calc(100% - 30px);
+        @include ellipsis();
+
+        font-size: 13px;
+        font-weight: 300;
+
+        vertical-align: middle;
+      }
+      .photo {
+        display: inline-block;
+        width: 26px; height: 26px;
+        border-radius: 50%;
+        overflow: hidden;
+        vertical-align: middle;
+        img {
+          width: 100%;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    &__info .card-item__cost {
+      display: none;
+    }
+
+    &__cost {
+      padding: 16px;
+      border-top: 1px  solid #eeeff2;
+
+      &:after {
+        display: block;
+        content: '';
+        clear: both;
+      }
+
+      .cost-unit {
+        font-size: 11px;
+        font-weight: bold;
+
+        &.available {
+          color: #6d64cd;
+        }
+      }
+
+      .cost-number {
+        float: right;
+        font-size: 17px;
+        font-weight: bold;
+        color: #020202;
+
+        small {
+          display: inline-block;
+          font-size: 11px;
+          padding-right: 4px;
+        }
+      }
+    }
+  }
+
+  &.disabled {
+    color: #b8b3b3;
+
+    img {
+      opacity: .5;
+      filter: grayscale(100%);
+    }
+
+    .card-item__cost .cost-number { display: none }
+  }
+}
+
+.sales .card-item-header .js-bookmark {
+  display: none;
+}
+
+//== hot card
+.card-hot {
+  display: inline-block;
+  position: relative;
+  width: calc(50% - 16px);
+  margin: 8px;
+  border: solid 1px #dadada;
+  padding: 1.3% 1.8% 3.7% 3%;
+  background-color: #fafbfe;
+
+  .row {
+    min-height: 25px;
+  }
+
+  &:before {
+    position: absolute;
+    left: -1px; top: -1px;
+    display: inline-block;
+    content: '';
+    width: 90px;
+    height: 90px;
+    background: url(/static/hot-label.png) no-repeat left top;
+    background-size: cover;
+  }
+
+  $photo-size: 93px;
+  &__photo {
+    position: relative;
+    width: $photo-size;
+    text-align: center;
+    overflow: hidden;
+
+    &:after {
+      display: block;
+      content: '';
+      width: 100%;
+      height: 0;
+      padding-top: 100%;
+    }
+
+    img {
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      min-width: $min-item-width;
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    box-sizing: border-box;
+    width: calc(100% - #{$photo-size} - #{$bookmark-size});
+    padding-left: 9%;
+    margin-right: $bookmark-size;
+    font-size: 13px;
+    font-weight: 300;
+    color: #020202;
+
+    &-categoryName {
+      padding: 4px 0;
+    }
+
+    &-name {
+      padding-bottom: 8px;
+    }
+
+    &-content {
+      height: 50px;
+      line-height: 140%;
+      margin-bottom: 11px;
+      overflow: hidden;
+    }
+
+    &-cell {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      &__game {
+        width: 100%;
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .photo {
+          width: 27px;
+          height: 27px;
+          border-radius: 50%;
+          overflow: hidden;
+          img { width: 100% }
+        }
+
+        .name {
+          width: calc(100% - 33px);
+          padding-left: 6px;
+          @include ellipsis();
+        }
+      }
+
+      &__cost {
+
+        .cost-number {
+          font-size: 20px;
+          font-weight: bold;
+          color: #473fa0;
+        }
+
+        .cost-unit {
+          padding-left: 5px;
+          font-size: 11px;
+          font-weight: bold;
+          color: #473fa0;
+        }
+      }
+    }
+  }
+}
+
+//== line card
+.home .transaction-items li.transaction-update {
+  display: none;
+}
+
+.card-line {
+
+  .card-line-date {
+    display: none;
+  }
+
+  .card-line-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 127px;
+    border: 1px solid #dadada;
+    padding: 14px 0;
+    background: #fff;
+  }
+
+
+
+  &__info {
+    flex: 1.4;
+    display: flex;
+    align-items: center;
+
+    .photo {
+      width: 137px;
+      padding-left: 27px;
+      max-height: 114px;
+      text-align: left;
+      overflow: hidden;
+
+      img {
+        min-width: $min-item-width;
+        max-width: 90%;
+      }
+    }
+
+    .state {
+      width: 184px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .category {
+      padding: 8px 0 2px;
+      font-size: 12px;
+      font-weight: 300;
+    }
+
+    .item-name {
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .history-subject {
+      display: none;
+    }
+
+    .subject {
+      width: calc(100% - 137px);
+      small {
+        font-size: 13px;
+        font-weight: 300;
+      }
+      h4 {
+        font-size: 13px;
+        font-weight: 300;
+
+        b, span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        b {
+          font-weight: bold;
+        }
+        span {
+          max-width: 85%;
+        }
+      }
+    }
+
+  }
+
+  &__sale {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 13px;
+
+    .update {
+      text-align: right;
+      font-weight: 300;
+      color: #797979;
+    }
+
+    .cost {
+      padding: 0 34px;
+      font-weight: bold;
+      color: #6d64cd;
+
+      span {
+        display: inline-block;
+        padding-right: 8px;
+        font-size: 21px;
+      }
+    }
+    .sort-type {
+      position: relative;
+      padding: 0 40px;
+      border-left: 1px solid #d9d9d9;
+      text-align: center;
+      font-weight: bold;
+
+      img {
+        width: 29px;
+        margin-right: 6px;
+        vertical-align: middle;
+      }
+
+      i.arrow {
+        position: absolute;
+        top: 50%;
+        right: 13%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #b8b3b3;
+      }
+    }
+  }
+}
+
+//== game info card
+.card-game {
+  height: 273px;
+  padding: 50px 50px 33px;
+  text-align: center;
+  background-color: #ebeef7;
+
+  .photo {
+    padding-bottom: 22px;
+    img {
+      width: 60px; height: 60px;
+    }
+  }
+
+  h5 {
+    padding-bottom:23px;
+    font-size: 13px;
+    color: #020202;
+  }
+
+  &__info {
+    h3 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 13px;
+      font-weight: 300;
+    }
+  }
+}
+
+//== pending card
+.pending {
+  .card {
+    background: #ebeef7;
+    border: 1px solid #ebeef7;
+
+    .card-item {
+      text-align: center;
+
+      .dummy-image {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 8px;
+        background: #dfe3ec;
+      }
+
+      span {
+        width: 80%;
+        height: 10px;
+        border-radius: 10px;
+        background: #dfe3ec;
+        color: #dfe3ec;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $grid-breakpoint-tablet) {
+  .card {
+    &-item {
+      &-header {
+        padding: 10px 10px 0 0;
+      }
+
+      &__box {
+        height: calc(100% - 68px);
+        padding: 0 6px 16px 16px;
+      }
+
+      &.no-head .card-item__box {
+        padding-top: 16px;
+      }
+
+      &__name {
+        padding-bottom: 2px;
+      }
+      &__user {
+        .name { padding-top: 4px }
+      }
+
+      &__cost {
+        padding: 14px 14px 18px;
+      }
+    }
+    &.disabled {
+      color: #b8b3b3;
+
+      img {
+        opacity: .5;
+        filter: grayscale(100%);
+      }
+    }
+  }
+
+  .card-line {
+    .transaction-update {
+      display: block;
+      padding-bottom: 5px;
+      font-size: 13px;
+      font-weight: 300;
+      color: #797979;
+    }
+
+    &-date {
+      display: block;
+      padding-bottom: 7px;
+      font-size: 13px;
+      font-weight: 300;
+      color: #797979;
+    }
+
+    &-box {
+      min-height: 120px;
+    }
+
+    &__info {
+      flex: 2;
+      display: flex;
+      align-items: center;
+
+      .photo {
+        width: 80px;
+        padding-left: 9px;
+        max-height: 114px;
+        text-align: center;
+        overflow: hidden;
+
+        img {
+          width: 52px;
+        }
+      }
+
+      .history-subject,
+      .subject {
+        width: calc(100% - 80px);
+
+        small {
+          font-size: 12px;
+        }
+
+        h4 {
+          font-size: 12px;
+          b {
+            display: block;
+            padding-bottom: 4px;
+          }
+
+          .gap {
+            display: none;
+          }
+        }
+      }
+
+      .history-subject {
+        display: block;
+        width: calc(100% - 10px);
+        padding-top: 8px;
+      }
+    }
+
+    .subject .gap { display: none }
+
+    &__sale {
+      .update { display: none }
+
+      .cost {
+        padding: 0;
+
+        span {
+          display: block;
+          font-size: 16px;
+        }
+        small { display: none }
+      }
+
+      .sort-type {
+        padding: 0 26px 0 0;
+        border-left: 0;
+        font-size: 11px;
+        font-weight: normal;
+        letter-spacing: -1;
+      }
+    }
+
+    &.account {
+      .card-line__info {
+        flex: 1;
+        width: 55%;
+        display: block;
+        padding-left: 25px;
+
+        .subject {
+          width: 100%;
+        }
+
+        .state {
+          text-align: left;
+        }
+      }
+
+      .card-line__sale {
+        .cost {
+          text-align: right;
+          padding-right: 10px;
+
+          span {
+            padding-right: 0;
+          }
+          .update {
+            display: block;
+            font-size: 12px;
+          }
+        }
+        .sort-type {
+          padding: 0 26px 0 0;
+
+          img {
+            width: 22px;
+          }
+
+          span {
+            display: none;
+          }
+        }
+      }
+
+      .subject { display: none }
+    }
+
+  }
+
+  .transaction {
+    .card-line {
+      &__sale {
+        flex-direction: column-reverse;
+
+        .cost {
+          padding-right: 30px;
+        }
+
+        .sort-type {
+          padding-right: 18px;
+          i { margin: 10px -10px 0 0}
+        }
+      }
+    }
+  }
+
+  //== game info card
+  .card-game {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #ebeef7;
+
+    .photo {
+      padding-bottom: 0;
+      img {
+        width: 50px; height: 50px;
+      }
+    }
+    &__subject {
+      flex: 2;
+      padding-left: 8px;
+      text-align: left;
+      h5 {
+        padding-bottom:3px;
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      p { font-size: 12px }
+    }
+
+    &__info {
+      h3 {
+        font-size: 25px;
+      }
+
+      p {
+        font-size: 13px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $grid-breakpoint-tablet) {
+  .home .transaction-items li.transaction-update {
+    display: block;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: $grid-breakpoint) {
+  .card-game {
+    display: block;
+    height: 220px;
+    padding: 30px 14px 0;
+
+    .photo {
+      padding-bottom: 14px;
+    }
+
+    &__subject {
+      padding-bottom: 18px;
+      text-align: center;
+    }
+  }
+}
